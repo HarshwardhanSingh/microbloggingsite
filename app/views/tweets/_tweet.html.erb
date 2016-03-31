@@ -1,0 +1,18 @@
+<div class="tweet">
+  <div class="media tweet-header">
+    <div class="media-left">
+      <%= tweet.user.avatar.url(:medium),class: 'img-circle' %>
+    </div>
+    <div class="media-body">
+      <%= link_to tweet.user.username, userpage_path(tweet.user.username) %>
+    </div>
+  </div>
+  <div class="tweet-body">
+    <p>
+      <%= tweet.content %>
+    </p>
+  </div>
+  <div class="tweet-footer">
+    
+  </div>
+</div>
