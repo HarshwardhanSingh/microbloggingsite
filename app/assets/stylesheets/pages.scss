@@ -7,4 +7,29 @@
 		padding-top: 5px;
 		display: block;
 	}
+
+	a.follow-btn, a.unfollow-btn
+	{
+		display: block;
+		width: 100px;
+		margin: 10px 0;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		background-color: #3caac2;
+		padding: 5px;
+		font-size: 12px;
+		color: rgb(255, 255, 255);
+		border-radius: .3em;
+	}
+
+	a.unfollow-btn
+	{
+		background-color: #09a160;
+	}
+
+	a:hover
+	{
+		text-decoration: none;
+	}
 }

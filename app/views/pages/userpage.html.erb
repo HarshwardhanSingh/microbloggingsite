@@ -5,6 +5,19 @@
 			<span class="username">
 				<%= @user.username %>
 			</span>
+			<span class="user-actions">
+				<% if user_signed_in? %>
+					<% if current_user.id != @user.id %>
+						<% if current_user.follows?(@user) %>
+							<%= link_to "Following", unfollow_user_path(@user.username), class: 'unfollow-btn' %>
+						<% else %>
+							<%= link_to "Follow", follow_user_path(@user.username), class: 'follow-btn' %>
+						<% end %>
+					<% end %>
+				<% else %>
+					<%= link_to "Follow", follow_user_path(@user.id), class: 'follow-btn' %>
+				<% end %>
+			</span>
 		</div>
 	</div>
 	<div class="col-md-6">
