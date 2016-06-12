@@ -42,6 +42,24 @@ class TweetsController < ApplicationController
     end
   end
 
+  def like
+    @tweet = Tweet.find(params[:id])
+    current_user.like!(@tweet)
+    respond_to do |format|
+      format.html{ redirect_to :back }
+      format.js{}
+    end
+  end  
+
+  def unlike
+    @tweet = Tweet.find(params[:id])
+    current_user.unlike!(@tweet)
+    respond_to do |format|
+      format.html{ redirect_to :back }
+      format.js{}
+    end
+  end
+
   private
     def tweet_params
       params.require(:tweet).permit(:content)

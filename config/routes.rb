@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   resources :tweets do
     resources :replies, only: [:create,:destroy]
+
+    member do
+      get 'like', to: 'tweets#like', as: 'like'
+      get 'unlike', to: 'tweets#unlike', as: 'unlike'
+    end
   end
 
   # DISPLAY USER DASHBOARD

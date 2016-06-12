@@ -15,7 +15,15 @@
   <div class="tweet-footer">
     <div class="row tweet-actions">
       <span class="like">
-        <%= link_to fa_icon('heart-o lg') %>
+        <% if user_signed_in? %>
+          <% if current_user.likes?(tweet) %>
+            <%= link_to fa_icon('heart lg'), unlike_tweet_path(tweet.id), class: 'unlike-btn' %>
+          <% else %>
+            <%= link_to fa_icon('heart-o lg'), like_tweet_path(tweet.id) %>
+          <% end %>
+        <% else %>
+          <%= link_to fa_icon('heart-o lg'), like_tweet_path(tweet.id) %>
+        <% end %>
       </span>
       <span class="reply">
         <%= link_to fa_icon('comment-o lg') %>
