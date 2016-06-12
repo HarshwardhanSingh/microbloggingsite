@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 	has_many :tweets
 	has_many :replies
 
+	acts_as_followable
+	acts_as_follower
+	acts_as_liker
+
     def self.find_for_database_authentication(warden_conditions)
 		conditions = warden_conditions.dup
 		if login = conditions.delete(:login)

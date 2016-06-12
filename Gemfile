@@ -24,3 +24,5 @@ gem 'simple_form'
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem "font-awesome-rails"
+
+gem "socialization"

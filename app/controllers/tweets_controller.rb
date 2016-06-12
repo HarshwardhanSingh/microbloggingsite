@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    @tags = @tweet.content.scan(/#\w+/).flatten
     @tweet.user_id = current_user.id
     @tweet.save
     respond_to do |format|
