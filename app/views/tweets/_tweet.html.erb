@@ -1,7 +1,7 @@
 <div class="tweet">
   <div class="media tweet-header">
     <div class="media-left">
-      <%= tweet.user.avatar.url(:medium),class: 'img-circle' %>
+      <%= image_tag(tweet.user.avatar.url(:thumb),class: 'img-rounded') %>
     </div>
     <div class="media-body">
       <%= link_to tweet.user.username, userpage_path(tweet.user.username) %>
@@ -13,6 +13,18 @@
     </p>
   </div>
   <div class="tweet-footer">
-    
+    <div class="row tweet-actions">
+      <span class="like">
+        <%= link_to fa_icon('heart-o lg') %>
+      </span>
+      <span class="reply">
+        <%= link_to fa_icon('comment-o lg') %>
+      </span>
+      <span class="counter"></span>
+    </div>
+
+    <div class="reply-form">
+      
+    </div>
   </div>
 </div>

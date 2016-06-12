@@ -1,16 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import "font-awesome";
 @import "*";
+
 
 body
 {
 	margin-top:70px;
 	background-color: #f8f8f8;
+	font-family: 'Open Sans', sans-serif;
 }
 
 nav.navbar-default
 {
 	background-color: #ffffff;
+}
+
+.form-control
+{
+	border-radius: 0px;
+	background-color: transparent;
 }
 
 .signup-form,.signin-form,.edit-registration-form

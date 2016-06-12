@@ -15,15 +15,15 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:tweet_id])
+    @tweet = Tweet.find(params[:id])
   end
 
   def edit
-    @tweet = Tweet.find(params[:tweet_id])
+    @tweet = Tweet.find(params[:id])
   end
 
   def update
-    @tweet = Tweet.find(params[:tweet_id])
+    @tweet = Tweet.find(params[:id])
     @tweet.update(tweet_params)
     @tweet.save
     respond_to do |format|
@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    @tweet = Tweet.find(params[:tweet_id])
+    @tweet = Tweet.find(params[:id])
     @tweet.destroy
     respond_to do |format|
       format.html{ redirect_to :back }

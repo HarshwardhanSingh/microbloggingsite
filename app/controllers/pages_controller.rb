@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @tweets = Tweet.all.order(created_at: :desc)
   end
 
   def followers
@@ -14,6 +15,8 @@ class PagesController < ApplicationController
   end
 
   def userpage
+    @user = User.find_by(username: params[:username])
+    @tweets = @user.tweets.all.order(created_at: :desc)
   end
 
   
